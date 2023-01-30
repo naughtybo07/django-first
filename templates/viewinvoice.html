@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        H1{
+            background-color:rgb(75, 74, 74);
+            border: 2px solid black;
+            border-radius: 15px;
+            text-align: center;
+            margin-left: 25px;
+            margin-right: 25px;
+            font-family: Algerian;
+        }
+        H1:hover{
+            scale: 105%;
+            transition: all ease-in 0.4s;
+        }
+        .center{
+            margin-left: 100px;
+            margin-top: 100px;
+
+        }
+        img{
+            margin-left: 350px;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(15, 14, 14);
+        }
+        .text{
+            background-color: rgb(95, 92, 92);
+            border-radius: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-family: Algerian;
+            margin-left: 300px;
+            border: 2px solid black;
+        }
+        .text:hover{
+            background-color: rgb(100, 133, 240);
+        }
+        .test{
+            background-color: rgb(95, 92, 92);
+            border-radius: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-family: Algerian;
+            margin-left: 40px;
+            border: 2px solid black;
+
+        }
+        .test:hover{
+            background-color: rgb(100, 133, 240);
+        }
+        .left{
+            margin-top: 20px;
+        }
+        .back{
+            background-color: rgb(78, 76, 76);
+            border-radius: 15px;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: 1050px;
+            margin-right: 50px;
+        }
+        .back:hover{
+            color: white;
+            background-color:rgba(8, 8, 101, 0.76);
+        }
+    </style>
+
+</head>
+<body>
+    {% load static %}
+    <H1>VIEW INVOICES</H1>
+    <div class="back">
+        <a href="home">HOME</a>
+    </div>
+    <div class="center">
+        <img src="{% static 'image\invoice.jpg' %}" alt=""><br>
+        <div class="left">
+            <a class="text" href="A_viewinvoice">APPROVED INVOICES</a>
+            <a class="test" href="D_viewinvoice">DENIED INVOICES</a>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

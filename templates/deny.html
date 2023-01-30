@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .back{
+            text-align: center;
+            background-color: rgb(59, 58, 58);
+            color: black;
+            font-size: 25px;
+            font-weight: 100px;
+            width: 100px;
+            height: 30px;
+            margin-left: 530px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        .back:hover{
+            scale: 105%;
+            transition: all ease-in 0.4s;
+            color: black;
+            background-color:rgba(8, 8, 101, 0.76);
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: Algerian; 
+    
+        }
+        .back:hover{
+            color: white;
+            background-color:rgba(8, 8, 101, 0.76);
+    
+        }
+        .center{
+            text-align: center;
+            margin-top: 100px;
+        }
+        img{
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div class="center">
+        <h2>SORRY!!! YOUR REQUEST HAS BEEN DENIED</h2>
+        <img src="{% static 'image\deney.jpg' %}" alt="">
+    </div>
+    <div class="back">
+        <a href="bankmain">Back</a>
+    </div>
+    
+</body>
+</html>

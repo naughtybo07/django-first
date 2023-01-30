@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <style>
+        .div{
+            background-color: rgb(75, 74, 74);
+            margin-top: 100px;
+            margin-left: 330px;
+            text-align: center;
+            width: 500px;
+            height: 400px;
+            border: 2px solid black;
+            border-radius: 15px;
+
+        }
+        input{
+            margin-top: 30px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-family: Algerian;
+            text-align: center;
+        }
+        label{
+            font-family: Algerian;
+        }
+        .back{
+            background-color: rgb(78, 76, 76);
+            border-radius: 15px;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: 1050px;
+            margin-right: 50px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: Algerian;
+        }
+        h1{
+            background-color: rgb(75, 74, 74);
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 15px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        .back:hover{
+            color: white;
+            background-color:rgba(8, 8, 101, 0.76);
+
+        }
+        H1{
+            background-color:rgb(75, 74, 74);
+            border: 2px solid black;
+            border-radius: 15px;
+            text-align: center;
+            margin-left: 25px;
+            margin-right: 25px;
+            font-family: Algerian;
+        }
+        H1:hover{
+            scale: 105%;
+            transition: all ease-in 0.4s;
+
+        }
+        .back{
+            background-color: rgb(78, 76, 76);
+            border-radius: 15px;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: 1050px;
+            margin-right: 50px;
+        }
+        .back:hover{
+            color: white;
+            background-color:rgba(8, 8, 101, 0.76);
+
+        }
+        .div:hover{
+            scale: 105%;
+            transition: all ease-in 0.2s;
+            background-color:rgba(167, 167, 173, 0.76);   
+       }
+    </style>
+</head>
+<body>
+    <h1>APPROVED INVOICES</h1>
+    <div class="back">
+        <a href="viewinvoice">Back</a>
+    </div>
+    {% for i in data1 %}
+    <div class="div">
+        <form method="post">
+            {%csrf_token%}
+            <label for="sup_code">SUPPLIER_CODE</label>
+            <input type="number" value="{{i.sup_code}}" name="sup_code"><br>
+            <label for="in_num">IN_NUM</label>
+            <input type="number" value="{{i.in_num}}" name="in_num"><br>
+            <label for="in_date">IN_DATE</label>
+            <input type="date" value="{{i.in_date}}" name="in_date"><br>
+            <label for="in_amount">IN_AMOUNT</label>
+            <input type="number" value="{{i.in_amount}}" name="in_amount"><br>
+            <label for="currency">IN_AMOUNT</label>
+            <input type="text" value="{{i.currency}}" name="currency"><br>
+            <label for="approve">Approve by</label>
+            <input type="text" value="{{name_user}}" name="approve"><br>
+
+        </form>
+    </div>
+    {%endfor%}
+</body>
+</html>

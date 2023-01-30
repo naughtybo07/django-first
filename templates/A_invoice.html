@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            background-color: rgb(75, 74, 74);
+            margin-top: 100px;
+            margin-left: 330px;
+            text-align: center;
+            width: 500px;
+            height: 350px;
+            border: 2px solid black;
+            border-radius: 15px;
+
+        }
+        .div:hover{
+            scale:105px;
+            transition: all ease-in 0.1s;
+        }
+        input{
+            margin-top: 30px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-family: Algerian;
+            text-align: center;
+        }
+        label{
+            font-family: Algerian;
+        }
+        .back{
+            background-color: rgb(78, 76, 76);
+            border-radius: 15px;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: 1050px;
+            margin-right: 50px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: Algerian;
+        }
+        h1{
+            background-color: rgb(75, 74, 74);
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 15px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        h1:hover{
+            scale:105px;
+            transition: all ease-in 0.1s;
+        }
+        .back:hover{
+            color: white;
+            background-color:rgba(8, 8, 101, 0.76);
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>APPROVE REQUEST</h1>
+    <div class="back">
+        <a href="bankmain">Back</a>
+    </div>
+        {% for i in data %}
+    <div class="div">
+    <form method="post">
+    {%csrf_token%}
+    
+        <label for="sup_code">SUPPLIER_CODE</label>
+        <input type="number" value="{{i.sup_code}}" name="sup_code"><br>
+        <label for="in_num">IN_NUM</label>
+        <input type="number" value="{{i.in_num}}" name="in_num"><br>
+        <label for="in_date">IN_DATE</label>
+        <input type="date" value="{{i.in_date}}" name="in_date"><br>
+        <label for="in_amount">IN_AMOUNT</label>
+        <input type="number" value="{{i.in_amount}}" name="in_amount"><br>
+        <label for="currency">IN_AMOUNT</label>
+        <input type="text" value="{{i.currency}}" name="currency"><br>
+        <input type="submit" value="Approve" name="approve">
+        <input type="submit" value="Deny" name="deny">
+    </form>
+    </div>
+    {%endfor%}
+
+
+</body>
+</html>

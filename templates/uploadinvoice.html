@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+        }
+        .center{
+            background-color: rgb(67, 66, 66);
+            width: 500px;
+            height: 350px;
+            margin-left: 300px;
+            margin-top: 80px;
+            text-align: center;
+            border-radius: 15px;
+            border: 2px solid black;
+            padding-top: 50px;
+            font-family: Algerian;
+        }
+        input{
+            margin-top: 25px;
+            border-radius: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            text-align: center;
+
+        }
+        .back{
+            background-color: rgb(78, 76, 76);
+            border-radius: 15px;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: 1050px;
+            margin-right: 50px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: Algerian; 
+ 
+        }
+        h1{
+            background-color: rgb(78, 76, 76);
+            border-radius: 15px;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        .back:hover{
+            color: white;
+            background-color:rgba(8, 8, 101, 0.76);
+
+        }
+    </style>
+</head>
+<body>
+    <h1>UPPLOAD INVOICE</h1>
+    <div class="back">
+        <a href="customermain">Back</a>
+    </div>
+    <div class="center">
+    <form method="post">
+        {%csrf_token%}
+        <label for="sup_code">SUPPLIER_CODE</label>
+        <input type="number" placeholder="Enter the supplier code" name="sup_code"><br>
+        <label for="in_num">IN_NUM</label>
+        <input type="number" placeholder="Enter Invoice number" name="in_num"><br>
+        <label for="in_date">IN_DATE</label>
+        <input type="date" placeholder="Enter Invoice date" name="in_date"><br>
+        <label for="in_amount">IN_AMOUNT</label>
+        <input type="number" placeholder="Enter Invoice amount" name="in_amount"><br>
+        <label for="currency">IN_AMOUNT</label>
+        <input type="text" placeholder="Enter Invoice amount" name="currency"><br>
+        <input type="submit" value="upload">
+        {{mgs1}}
+        {{mgs}}
+    </form>
+</div>
+</body>
+</html>

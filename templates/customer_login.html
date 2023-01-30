@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+        }
+        h1{
+            background-color: rgb(79, 77, 77);
+            border: 2px solid black;
+            border-radius: 15px;
+            text-align: center;
+            font-family: Algerian;
+        }
+        h1:hover{
+            scale: 105%;
+            transition: all ease-in 0.4s;
+        }
+        .left{
+            background-color: rgb(53, 50, 50);
+            width: 400px;
+            height:300px;
+            margin-left: 100px;
+            margin-top: 100px;
+            text-align: center;
+            border-radius: 15px;
+            border: 2px solid black;
+            padding-top: 100px;
+        }
+        input{
+            height: 40px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        img{
+            margin-left: 220px;
+            margin-top: 150px;
+        }
+        h2{
+            margin-left: 200px;
+            font-family: Algerian;
+        }
+        .back{
+            text-align: center;
+            background-color: rgb(59, 58, 58);
+            color: aliceblue;
+            font-size: 25px;
+            font-weight: 100px;
+            width: 100px;
+            height: 30px;
+            margin-left: 500px;
+            border-radius: 20px;
+            margin-top: 100px;
+        }
+        .back:hover{
+            scale: 105%;
+            transition: all ease-in 0.4s;
+            color: white;
+            background-color:rgba(8, 8, 101, 0.76);
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        input[type=submit]:hover{
+            background-color: rgb(116, 190, 243);
+        }
+        input[type=text]:hover,[type=email]:hover{
+            background-color: rgb(79, 80, 82);
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <h1>LOGIN AS CUSTOMER</h1>
+    <div class="container">
+        <div class="left">
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" placeholder="Enter your name" name="name"><br><br>
+                <input type="email" placeholder="Enter your Email" name="email"><br><br>
+                <input type="text" placeholder="Enter your Password" name="password1"><br><br>
+                <input type="submit" value="Login">
+                    {{message}}
+                </form>
+        </div>
+        <div class="img"><img src="{% static 'image\loginforproject.jpg' %}"><h2>Axis Bank ultra pro</h2></div>
+    </div>
+    <div class="back">
+        <a href="home">Back</a>
+    </div>
+</body>
+</html>

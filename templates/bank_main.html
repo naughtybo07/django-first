@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <style>
+        .container{
+            height: 800px;
+            margin-top: 10px;        
+            margin-left: 10px;       
+            width: 1100px;       
+            display: flex; 
+            border-radius: 15px;
+        }
+        .left{
+            height: 600px;
+            margin-left: 50px;
+            width: 300px;
+            margin-top: 50px;
+            background-color: rgb(39, 42, 42);
+            border-radius: 15px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .text{
+            text-align: center;
+            background-color: gray;
+            margin-top: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 15px;
+            padding-top: 5px;
+            font-size: large;
+            font-family: Algerian;  
+        }
+        .text:hover{
+            scale: 105%;
+            transition: all ease-in 0.4s;
+            background-color: rgb(93, 90, 90);
+        }
+        .right{
+            margin-left: 150px;
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(58, 62, 62);
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 15px;
+            border:2px solid black;
+            font-family: Algerian;  
+        }
+        h3{
+            font-family: Algerian;  
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1> Welcome To Axis Bank Ultra Pro</h1>
+    <div class="container">
+        <div class="left">
+            <nav>
+                <div class="text"><a href="oursuppliers" >Our_suppliers</a></div>
+                <div class="text"><a href="ourcustomer">Our_customers</a></div>
+                <div class="text"><a href="approveinvoice">approve payment</a></div>
+                <div class="text"><a href="viewinvoice">view invoice</a></div>
+                <div class="text"><a href="home">Logout</a></div>
+            </nav>
+        </div>
+        <div class="right">
+            <img src="{% static 'image\h.jpg' %}" alt="">
+            <h3>LOGIN AS BANK -{{bankname}} </h3>
+        </div>
+    </div>
+    
+        
+        <div class="right"></div>
+    </div>
+</body>
+</html>

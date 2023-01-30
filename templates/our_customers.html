@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container{
+        display: flex;
+    }
+    .center{
+        background-color: rgb(67, 66, 66);
+        width: 500px;
+        height: 350px;
+        margin-left: 300px;
+        margin-top: 50px;
+        text-align: center;
+        border-radius: 15px;
+        border: 2px solid black;
+        padding-top: 50px;
+        font-family: Algerian;
+    }
+    input{
+        margin-top: 15px;
+        border-radius: 5px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        text-align: center;
+        font-family: Algerian;
+
+    }
+    .back{
+        background-color: rgb(78, 76, 76);
+        border-radius: 15px;
+        border: 2px solid black;
+        text-align: center;
+        margin-left: 1050px;
+        margin-right: 50px;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        font-family: Algerian; 
+
+    }
+    h1{
+        background-color: rgb(78, 76, 76);
+        border-radius: 15px;
+        border: 2px solid black;
+        text-align: center;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    img{
+        margin-top: 100px;
+        margin-left: 100px;
+    }
+    .back:hover{
+        color: white;
+        background-color:rgba(8, 8, 101, 0.76);
+
+    }
+    h1:hover{
+        scale: 105%;
+        transition: all ease-in 0.4s;
+    }
+    .center:hover{
+        scale: 105%;
+        transition: all ease-in 0.4s;   
+   }
+</style>
+</head>
+<body>
+    <h1>OUR CUSTOMERS</h1>
+    <div class="back">
+        <a href="bankmain">Back</a>
+    </div>
+    {% for i in cus2%}
+    <div class="container">
+        <div class="center">
+            <form method="post">
+                {% csrf_token %}
+                <label for="name">NAME</label>
+                <input type="text" value="{{i.name}}" name="name"><br>
+                <label for="address">ADDRESS</label>
+                <input type="text" value="{{i.address}}" name="address"><br>
+                <label for="phnum">PHONE</label>
+                <input type="number" value="{{i.phnum}}" name="phnum"><br>
+                <label for="email">EMAIL</label>
+                <input type="email" value="{{i.email}}" name="email"><br>
+                <label for="loan_Ac_num">LOAN ACCOUNT NUMBER</label>
+                <input type="number"value="{{i.loan_Ac_num}}" name="loan_Ac_num"><br>
+                <label for="loan_info">LOAN INFO</label>
+                <input type="text"value="{{i.loan_info}}" name="loan_info"><br>
+
+
+
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
